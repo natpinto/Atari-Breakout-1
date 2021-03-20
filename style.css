@@ -1,0 +1,17 @@
+body {
+  background-color: lightblue;
+}
+
+h1 {
+  color: white;
+  font-style: bold;
+  text-align: center;
+}
+
+canvas {
+  background-color: white;
+  width: 1000px;
+  height: 600px;
+  display: block;
+  border-radius: 5px;
+}
