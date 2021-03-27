@@ -167,6 +167,7 @@ function moveBall() {
   ctx.clearRect(ball.x - ball.radius, ball.y - ball.radius, ball.radius * 3, ball.radius * 3);
   ball.x += ball.dx;
   ball.y += ball.dy;
+  //brickCollision();
   drawBall();
 
 // check if ball x is greater than canvas
@@ -189,33 +190,37 @@ function moveBall() {
   }
 }
 
-/*function brickCollision() {
+function brickCollision() {
   for (var c = 0; c < colCount; c++) {
       for (var r = 0; r < rowCount; r++) {
         var thisBrick = bricks[c][r];
-  }
+        if (bricks.status == 1){
+          if (ball.x + ball.radius > brick.x && ball.x + ball.radius < brick.x + brick.width && ball.y + ball.radius > brick.y && ball.y + ball.radius < brick.y + brick.height){
+            ball.dy *= -1;
+            brick.status = 0;
+            numBricks -= 1;
+            score += 10;
+            if (numBricks == 0){
+              score = 0;
+              alert("You win");
+              reset();
+            }
+          }
+
+        }
+    }
   //make brick disappear
 
   //turn ball around
 
   //check if any brickks areleft and if we won
-} */
+  }
+} 
 
-
-setInterval(moveBall, 50)
-init()
-drawBricks()
-drawPaddle()
-drawBall()
-moveBall()
-
-
-// when ball touches bricks, bricks disappear
-
-// when ball touches bottom, bricks resets
-
-// ball is contained in canvas
-
-// ball moves randomly, and moves in opposite direction when hitting brick or paddle or walls 
-
-// all of this is contained in a canvas
+//setInterval(moveBall, 50)
+init();
+moveBall();
+drawBricks();
+drawPaddle();
+drawBall();
+setInterval(10);
