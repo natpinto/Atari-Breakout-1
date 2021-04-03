@@ -168,7 +168,7 @@ function moveBall() {
   ball.x += ball.dx;
   ball.y += ball.dy;
   //brickCollision();
-  drawBall();
+  //drawBall();
 
 // check if ball x is greater than canvas
   if (ball.y + ball.dy > canvas.height - paddle.height - 12 && ball.x > paddle.x && ball.x < paddle.x + paddle.width) {
@@ -217,9 +217,9 @@ function brickCollision() {
   }
 } 
 
-//setInterval(moveBall, 50)
+setInterval(moveBall, 50)
 init();
-moveBall();
+
 drawBricks();
 drawPaddle();
 drawBall();
